@@ -2110,9 +2110,8 @@ body {
     .next-md-body a:hover, .friends-box a:hover {
       color: #222;
       border-bottom-color: #222;
-    }
-    .nav-toggle .line {
-      background-color:  !important;
+    }.nav-toggle .line {
+      background-color: #d0ebff !important;
     }
       .nav-item a {
         color:  #555;
@@ -2177,6 +2176,8 @@ body {
     }
     .mist .site-title i {
       background: #FFFFFFfe;
+    }.box-shadow-wrapper {
+      padding: 10px;
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
