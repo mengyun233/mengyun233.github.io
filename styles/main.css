@@ -2181,11 +2181,11 @@ body {
     }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
-      cursor: default;
+      cursor: url('/media/curs/AppStarting.cur'), default;
     }a {
       cursor: pointer;
     }input, textarea, code {
-      cursor: text;
+      cursor: url('/media/curs/Cross.cur'), text !important;
     }code > span.copy-code {
       cursor: pointer;
     }.post img {
