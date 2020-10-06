@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mengyun233.github.io</id>
     <title>梦 | 云</title>
-    <updated>2020-10-06T00:55:55.335Z</updated>
+    <updated>2020-10-06T02:35:34.549Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mengyun233.github.io"/>
     <link rel="self" href="https://mengyun233.github.io/atom.xml"/>
@@ -10,6 +10,21 @@
     <logo>https://mengyun233.github.io/images/avatar.png</logo>
     <icon>https://mengyun233.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 梦 | 云</rights>
+    <entry>
+        <title type="html"><![CDATA[2020.10.6]]></title>
+        <id>https://mengyun233.github.io/post/bbone/</id>
+        <link href="https://mengyun233.github.io/post/bbone/">
+        </link>
+        <updated>2020-10-06T01:33:42.000Z</updated>
+        <content type="html"><![CDATA[<p>qwq，随心乱写一番，把想说的话b在博客上。</p>
+<h2 id="塔罗">塔罗🔘</h2>
+<p>这东西出来已经一两周了，本来以为这个模式没混子的，即使有也不能咋样。看来我是想多了，昨天一局差点把我气得七窍生烟。你说侍卫混混就算了，基本功好还能赢；你骑士在这混就过分了吧？都快赢了，对面二挂救下打倒了，我还没上挂。结果红蝶开麦，对对面咒术说了几句什么乱七八糟的话（没听清），然后就看着咒术被摸满血，看着我被打倒，也不过来扶一下，我真的尽力了，你不去打对方，在这边演戏，不考虑别人感受这气不气人？好吧发发牢骚，反正小剧场她被骂的够惨，不过还狡辩。我也不想计较了，举报不谢🆗</p>
+<p><strong>这里也提醒一下大家（算了没人看）：玩游戏不是一个人的事情（单机玩家忽略qwq），要考虑队友感受，输了不怪你，但你演别人这就是你的错。</strong></p>
+<h2 id="论坛">论坛</h2>
+<p>谈点好事吧，论坛总算能发帖了，这还不错，兴奋的回了好多贴qwq。</p>
+<p>没啥话了，复习月考去了，祝还没有月考的各位考得顺利。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[诡异的游戏·先知传]]></title>
         <id>https://mengyun233.github.io/post/gui-yi-de-you-xi-xian-zhi-chuan/</id>
