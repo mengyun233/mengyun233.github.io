@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mengyun233.github.io</id>
     <title>梦 | 云</title>
-    <updated>2020-10-06T02:35:34.549Z</updated>
+    <updated>2020-10-06T03:20:39.128Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mengyun233.github.io"/>
     <link rel="self" href="https://mengyun233.github.io/atom.xml"/>
@@ -27,16 +27,14 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[诡异的游戏·先知传]]></title>
-        <id>https://mengyun233.github.io/post/gui-yi-de-you-xi-xian-zhi-chuan/</id>
-        <link href="https://mengyun233.github.io/post/gui-yi-de-you-xi-xian-zhi-chuan/">
+        <id>https://mengyun233.github.io/post/梦开始的地方/</id>
+        <link href="https://mengyun233.github.io/post/梦开始的地方/">
         </link>
         <updated>2020-08-24T12:45:53.000Z</updated>
-        <summary type="html"><![CDATA[<p>点击下方标签即可查看全部文章哦~~<br>
-有什么好的建议或批评可以写在评论区~</p>
-]]></summary>
         <content type="html"><![CDATA[<p>点击下方标签即可查看全部文章哦~~<br>
 有什么好的建议或批评可以写在评论区~</p>
-<!-- more -->
+<h2 id="目录">目录：</h2>
+<p>1.引子 https://mengyun233.github.io/post/000/</p>
 ]]></content>
     </entry>
 </feed>
