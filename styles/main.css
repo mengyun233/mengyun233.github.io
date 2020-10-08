@@ -2111,10 +2111,10 @@ body {
       color: #222;
       border-bottom-color: #222;
     }.nav-toggle .line {
-      background-color: #d0ebff !important;
+      background-color: #94d82d !important;
     }
       .nav-item a {
-        color:  #555;
+        color:  #868e96;
       }.nav-item a:hover {
         color: #222;
       }.nav-item-active {
@@ -2134,8 +2134,8 @@ body {
       transition-duration: 59s;
       transition-timing-function: cubic-bezier(.34,0,.84,1);
     }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #ffd43b;
+      border-bottom-color: #ffd43b;
     }.markdownIt-TOC a:hover {
       color: #fff;
       border-bottom-color: #fff;
