@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mengyun233.github.io</id>
     <title>梦 | 云</title>
-    <updated>2020-10-11T07:41:51.692Z</updated>
+    <updated>2020-10-12T13:10:16.903Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mengyun233.github.io"/>
     <link rel="self" href="https://mengyun233.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://mengyun233.github.io/images/avatar.png</logo>
     <icon>https://mengyun233.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 梦 | 云</rights>
+    <entry>
+        <title type="html"><![CDATA[彩蛋解密]]></title>
+        <id>https://mengyun233.github.io/post/cai-dan-jie-mi/</id>
+        <link href="https://mengyun233.github.io/post/cai-dan-jie-mi/">
+        </link>
+        <updated>2020-10-12T13:04:34.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="起因">起因</h1>
+<p>突然觉得这网页好无聊，就弄了几个彩蛋~<br>
+<s>我是不会告诉你是我弄错的文章删不掉改成彩蛋的qwq</s></p>
+<h1 id="如何寻找">如何寻找</h1>
+<p>很简单，提示：第一个彩蛋隐藏在置顶文章里哦qwq！加油吧<sub>多关心一点黄色字体</sub>~</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[《作业》（改编自朱自清《春》）]]></title>
         <id>https://mengyun233.github.io/post/homework/</id>

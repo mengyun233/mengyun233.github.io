@@ -8,8 +8,8 @@
 <meta name="keywords" content="梦云">
 <meta name="description" content="梦云的个人网页啊~~">
 <meta name="theme-color" content="#343a40">
-<title>彩蛋1号 | 梦 | 云</title>
-<link rel="shortcut icon" href="/favicon.ico?v=1602402090693">
+<title>彩蛋2号 | 梦 | 云</title>
+<link rel="shortcut icon" href="/favicon.ico?v=1602508209423">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
 <link
@@ -38,7 +38,7 @@
 
 
 
-  <meta name="description" content="彩蛋1号" />
+  <meta name="description" content="彩蛋2号" />
   <meta name="keywords" content="" />
 </head>
 
@@ -203,7 +203,8 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            
+            <div class="post-side-meta" id="post_side_meta">
+              
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -220,7 +221,7 @@
     <div class="sidebar-item-box">
       <a href="/archives/">
         
-        <span class="site-item-stat-count">3</span>
+        <span class="site-item-stat-count">4</span>
         <span class="site-item-stat-name language" data-lan="article">文章</span>
       </a>
     </div>
@@ -274,6 +275,195 @@
   </div>
 
 </div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto"
+    id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li><a href="#%E6%81%AD%E5%96%9C">恭喜</a>
+<ul>
+<li><a href="#%E5%8A%A0%E6%B2%B9%E5%90%A7">加油吧！</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
+  let active = 'active-show', activeClass = 'active-current';
+  let tocWrapper = document.querySelector('#toc_wrapper');
+  let tocContent = tocWrapper.children[0];
+  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
+
+  function addTocNumber(elem, deep) {
+    if (!elem) {
+      return;
+    }
+    let prop = elem.__proto__;
+
+    if (prop === HTMLUListElement.prototype) {
+      for (let i = 0; i < elem.children.length; i++) {
+        addTocNumber(elem.children[i], deep + (i + 1) + '.');
+      }
+    } else if (prop === HTMLLIElement.prototype) {
+      // 保存li元素
+      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
+        lList.push(elem);
+      }
+      for (let i = 0; i < elem.children.length; i++) {
+        let cur = elem.children[i];
+        if (cur.__proto__ === HTMLAnchorElement.prototype) {
+          if (autoNumber) {
+            cur.text = deep + ' ' + cur.text;
+          }
+        } else if (cur.__proto__ === HTMLUListElement.prototype) {
+          addTocNumber(cur, deep);
+        }
+      }
+    }
+  }
+
+  function removeParentActiveClass() {
+    let parents = tocContent.querySelectorAll('.' + active)
+    parents.forEach(function (elem) {
+      elem.classList.remove(active);
+    });
+  }
+
+  function addActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.add(activeClass);
+    }
+  }
+
+  function removeActiveClass(index) {
+    if (index >= 0 && index < hList.length) {
+      lList[index].classList.remove(activeClass);
+    }
+  }
+
+  function addActiveLiElemment(elem, parent) {
+    if (!elem || elem === parent) {
+      return;
+    } else {
+      if (elem.__proto__ === HTMLLIElement.prototype) {
+        elem.classList.add(active);
+      }
+      addActiveLiElemment(elem.parentElement, parent);
+    }
+  }
+
+  function showToc() {
+    if (tocWrapper) {
+      postBody = document.querySelector('#post_body');
+      for (let i = 0; i < postBody.children.length; i++) {
+        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+          hList.push(postBody.children[i]);
+        }
+      }
+      if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+      } else if (tocWrapper.classList.contains('no_compress')) {
+        tocContent.classList.add('expanded');
+      } else {
+        if (hList.length > 10) {
+          active = 'active-hidden'
+          tocContent.classList.add('closed');
+        } else {
+          tocContent.classList.add('expanded');
+        }
+      }
+    }
+  }
+
+  (function () {
+    // 处理不是从#一级标题开始目录
+    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
+      let con = tocContent.children[0].children[0];
+      tocContent.innerHTML = con.innerHTML;
+    }
+    let markdownItTOC = document.querySelector('.markdownIt-TOC');
+    let innerHeight = window.innerHeight;
+    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
+    addTocNumber(tocContent, '');
+  })();
+
+  document.addEventListener('scroll', function (e) {
+    if (lList.length <= 0) {
+      return;
+    }
+    let scrollTop = document.scrollingElement.scrollTop + 10;
+    let dir;
+
+    if (lastTop - scrollTop > 0) {
+      dir = 'up';
+    } else {
+      dir = 'down';
+    }
+
+    lastTop = scrollTop;
+    if (scrollTop <= 0) {
+      if (lastIndex >= 0 && lastIndex < hList.length) {
+        lList[lastIndex].classList.remove(activeClass);
+      }
+      return;
+    }
+
+    let current = 0, hasFind = false;
+    for (let i = 0; i < hList.length; i++) {
+      if (hList[i].offsetTop > scrollTop) {
+        current = i;
+        hasFind = true;
+        break;
+      }
+    }
+    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+      current = hList.length - 1;
+    } else {
+      current--;
+    }
+    if (dir === 'down') {
+      if (current > lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex)
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    } else {
+      if (current < lastIndex) {
+        addActiveClass(current);
+        removeActiveClass(lastIndex);
+        lastIndex = current;
+        removeParentActiveClass();
+        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
+      }
+    }
+  });
+
+
+  window.addEventListener('load', function () {
+    showToc();
+    document.querySelector('#sidebar').style = 'display: block;';
+    tocWrapper.classList.add('toc-active');
+    setTimeout(function () {
+      if ("createEvent" in document) {
+        let evt = document.createEvent("HTMLEvents");
+        evt.initEvent("scroll", false, true);
+        document.dispatchEvent(evt);
+      }
+      else {
+        document.fireEvent("scroll");
+      }
+    }, 500)
+  })
+
+</script>
+            </div>
           
         
       </div>
@@ -362,7 +552,7 @@
             <section class="post-header">
   <h1 class="post-title">
     <a class="post-title-link" href="https://mengyun233.github.io/post/盲生你发现了华点/">
-      彩蛋1号
+      彩蛋2号
     </a>
   </h1>
   <div class="post-meta">
@@ -381,12 +571,12 @@
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>6<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>44<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/盲生你发现了华点/" data-flag-title="彩蛋1号" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/盲生你发现了华点/" data-flag-title="彩蛋2号" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -395,7 +585,12 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>恭喜发现彩蛋~</p>
+              <h1 id="恭喜">恭喜</h1>
+<p>你发现彩蛋了哦~~<br>
+祝贺~<br>
+记得在评论区打卡<br>
+第三个彩蛋的提示：鲁迅的一篇文章题目将顺序颠倒~</p>
+<h2 id="加油吧">加油吧！</h2>
 
             </div>
             
@@ -412,7 +607,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://mengyun233.github.io/post/盲生你发现了华点/" title="彩蛋1号">https://mengyun233.github.io/post/盲生你发现了华点/</a>
+      <a href="https://mengyun233.github.io/post/盲生你发现了华点/" title="彩蛋2号">https://mengyun233.github.io/post/盲生你发现了华点/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -945,6 +1140,16 @@
     <div class="result" id="result">
       
       <div class="item">
+        <a class="result-title" style="opacity: 0;" href="https://mengyun233.github.io/post/cai-dan-jie-mi/"" data-c="
+          &lt;h1 id=&#34;起因&#34;&gt;起因&lt;/h1&gt;
+&lt;p&gt;突然觉得这网页好无聊，就弄了几个彩蛋~&lt;br&gt;
+&lt;s&gt;我是不会告诉你是我弄错的文章删不掉改成彩蛋的qwq&lt;/s&gt;&lt;/p&gt;
+&lt;h1 id=&#34;如何寻找&#34;&gt;如何寻找&lt;/h1&gt;
+&lt;p&gt;很简单，提示：第一个彩蛋隐藏在置顶文章里哦qwq！加油吧&lt;sub&gt;多关心一点黄色字体&lt;/sub&gt;~&lt;/p&gt;
+">彩蛋解密</a>
+      </div>
+      
+      <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://mengyun233.github.io/post/talk/"" data-c="
           &lt;h2 id=&#34;欢迎来到聊天区啊~&#34;&gt;欢迎来到聊天区啊~&lt;/h2&gt;
 &lt;p&gt;这里你可以畅所欲言~~&lt;br&gt;
@@ -955,8 +1160,10 @@
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://mengyun233.github.io/post/盲生你又发现了华点/"" data-c="
-          &lt;p&gt;彩蛋2号被你发现了qwq&lt;/p&gt;
+        <a class="result-title" style="opacity: 0;" href="https://mengyun233.github.io/post/从三味书屋到百草原/"" data-c="
+          &lt;h1 id=&#34;恭喜&#34;&gt;恭喜&lt;/h1&gt;
+&lt;p&gt;彩蛋3号被你发现了qwq&lt;br&gt;
+在下面打卡吧~~~&lt;/p&gt;
 ">彩蛋</a>
       </div>
       
@@ -1005,8 +1212,13 @@
       
       <div class="item">
         <a class="result-title" style="opacity: 0;" href="https://mengyun233.github.io/post/盲生你发现了华点/"" data-c="
-          &lt;p&gt;恭喜发现彩蛋~&lt;/p&gt;
-">彩蛋1号</a>
+          &lt;h1 id=&#34;恭喜&#34;&gt;恭喜&lt;/h1&gt;
+&lt;p&gt;你发现彩蛋了哦~~&lt;br&gt;
+祝贺~&lt;br&gt;
+记得在评论区打卡&lt;br&gt;
+第三个彩蛋的提示：鲁迅的一篇文章题目将顺序颠倒~&lt;/p&gt;
+&lt;h2 id=&#34;加油吧&#34;&gt;加油吧！&lt;/h2&gt;
+">彩蛋2号</a>
       </div>
       
       <div class="item">
@@ -1022,8 +1234,14 @@
       </div>
       
       <div class="item">
-        <a class="result-title" style="opacity: 0;" href="https://mengyun233.github.io/post/从三味书屋到百草园/"" data-c="
-          &lt;p&gt;233&lt;/p&gt;
+        <a class="result-title" style="opacity: 0;" href="https://mengyun233.github.io/post/colourful 蛋/"" data-c="
+          &lt;p&gt;2333333333&lt;/p&gt;
+&lt;h1 id=&#34;恭喜~~~&#34;&gt;恭喜~~~&lt;/h1&gt;
+&lt;p&gt;哈哈第一个彩蛋被你发现了呢&lt;br&gt;
+记得在评论区打卡哦~&lt;br&gt;
+第二个彩蛋的尾缀提示是：落冬花网页中的一个小彩蛋&lt;br&gt;
+触发格式：现在的网址，把“colourful 蛋”换成尾缀就好la~&lt;br&gt;
+##加油哦！！！&lt;/p&gt;
 ">我发现我删不掉这篇了</a>
       </div>
       
