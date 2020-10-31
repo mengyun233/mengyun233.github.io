@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mengyun233.github.io</id>
     <title>梦 | 云</title>
-    <updated>2020-10-14T13:12:17.469Z</updated>
+    <updated>2020-10-31T02:37:39.946Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mengyun233.github.io"/>
     <link rel="self" href="https://mengyun233.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://mengyun233.github.io/images/avatar.png</logo>
     <icon>https://mengyun233.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 梦 | 云</rights>
+    <entry>
+        <title type="html"><![CDATA[伊莱生日快乐]]></title>
+        <id>https://mengyun233.github.io/post/yi-lai-sheng-ri-kuai-le/</id>
+        <link href="https://mengyun233.github.io/post/yi-lai-sheng-ri-kuai-le/">
+        </link>
+        <updated>2020-10-31T02:33:12.000Z</updated>
+        <content type="html"><![CDATA[<p>伊莱两岁啦~~<br>
+<a href="https://www.bilibili.com/video/BV1PK411P7Fb">庆祝视频~</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[彩蛋解密]]></title>
         <id>https://mengyun233.github.io/post/cai-dan-jie-mi/</id>
