@@ -2177,15 +2177,13 @@ body {
     .mist .site-title i {
       background: #FFFFFFfe;
     }.box-shadow-wrapper {
-      padding: 10px;
-    }.box-shadow-wrapper {
       box-shadow: none !important;
     }body {
-      cursor: url('/media/curs/AppStarting.cur'), default;
+      cursor: url('/media/curs/AppStarting.cur.cur'), default;
     }a {
       cursor: pointer;
     }input, textarea, code {
-      cursor: url('/media/curs/Cross.cur'), text !important;
+      cursor: url('/media/curs/Cross.cur.cur'), text !important;
     }code > span.copy-code {
       cursor: pointer;
     }.post img {
