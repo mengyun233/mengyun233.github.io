@@ -8,7 +8,7 @@
 <meta name="keywords" content="梦云">
 <meta name="description" content="梦云的个人网页啊~~">
 <meta name="theme-color" content="#343a40">
-<title>2020.10.6 | 梦 | 云</title>
+<title>寒假英语lesson1单词 | 梦 | 云</title>
 <link rel="shortcut icon" href="/favicon.ico?v=1613616403561">
 <link rel="stylesheet" href="/media/css/gemini.css">
 <link rel="stylesheet" href="/media/fonts/font-awesome.css">
@@ -38,8 +38,8 @@
 
 
 
-  <meta name="description" content="2020.10.6" />
-  <meta name="keywords" content="随心乱说" />
+  <meta name="description" content="寒假英语lesson1单词" />
+  <meta name="keywords" content="" />
 </head>
 
 <body>
@@ -203,8 +203,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="/images/avatar.png"/>
@@ -275,196 +274,6 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto"
-    id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%A1%94%E7%BD%97">塔罗🔘</a></li>
-<li><a href="#%E8%AE%BA%E5%9D%9B">论坛</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-  let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1;
-  let active = 'active-show', activeClass = 'active-current';
-  let tocWrapper = document.querySelector('#toc_wrapper');
-  let tocContent = tocWrapper.children[0];
-  let autoNumber = tocWrapper && tocWrapper.classList.contains('auto-number');
-
-  function addTocNumber(elem, deep) {
-    if (!elem) {
-      return;
-    }
-    let prop = elem.__proto__;
-
-    if (prop === HTMLUListElement.prototype) {
-      for (let i = 0; i < elem.children.length; i++) {
-        addTocNumber(elem.children[i], deep + (i + 1) + '.');
-      }
-    } else if (prop === HTMLLIElement.prototype) {
-      // 保存li元素
-      if (elem.children[0] && elem.children[0].__proto__ === HTMLAnchorElement.prototype) {
-        lList.push(elem);
-      }
-      for (let i = 0; i < elem.children.length; i++) {
-        let cur = elem.children[i];
-        if (cur.__proto__ === HTMLAnchorElement.prototype) {
-          if (autoNumber) {
-            cur.text = deep + ' ' + cur.text;
-          }
-        } else if (cur.__proto__ === HTMLUListElement.prototype) {
-          addTocNumber(cur, deep);
-        }
-      }
-    }
-  }
-
-  function removeParentActiveClass() {
-    let parents = tocContent.querySelectorAll('.' + active)
-    parents.forEach(function (elem) {
-      elem.classList.remove(active);
-    });
-  }
-
-  function addActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.add(activeClass);
-    }
-  }
-
-  function removeActiveClass(index) {
-    if (index >= 0 && index < hList.length) {
-      lList[index].classList.remove(activeClass);
-    }
-  }
-
-  function addActiveLiElemment(elem, parent) {
-    if (!elem || elem === parent) {
-      return;
-    } else {
-      if (elem.__proto__ === HTMLLIElement.prototype) {
-        elem.classList.add(active);
-      }
-      addActiveLiElemment(elem.parentElement, parent);
-    }
-  }
-
-  function showToc() {
-    if (tocWrapper) {
-      postBody = document.querySelector('#post_body');
-      for (let i = 0; i < postBody.children.length; i++) {
-        if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-          hList.push(postBody.children[i]);
-        }
-      }
-      if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-      } else if (tocWrapper.classList.contains('no_compress')) {
-        tocContent.classList.add('expanded');
-      } else {
-        if (hList.length > 10) {
-          active = 'active-hidden'
-          tocContent.classList.add('closed');
-        } else {
-          tocContent.classList.add('expanded');
-        }
-      }
-    }
-  }
-
-  (function () {
-    // 处理不是从#一级标题开始目录
-    if (tocContent.children.length === 1 && tocContent.children[0].__proto__ === HTMLLIElement.prototype) {
-      let con = tocContent.children[0].children[0];
-      tocContent.innerHTML = con.innerHTML;
-    }
-    let markdownItTOC = document.querySelector('.markdownIt-TOC');
-    let innerHeight = window.innerHeight;
-    markdownItTOC.style = `max-height: ${innerHeight - 80 > 0 ? innerHeight - 80 : innerHeight}px`
-    addTocNumber(tocContent, '');
-  })();
-
-  document.addEventListener('scroll', function (e) {
-    if (lList.length <= 0) {
-      return;
-    }
-    let scrollTop = document.scrollingElement.scrollTop + 10;
-    let dir;
-
-    if (lastTop - scrollTop > 0) {
-      dir = 'up';
-    } else {
-      dir = 'down';
-    }
-
-    lastTop = scrollTop;
-    if (scrollTop <= 0) {
-      if (lastIndex >= 0 && lastIndex < hList.length) {
-        lList[lastIndex].classList.remove(activeClass);
-      }
-      return;
-    }
-
-    let current = 0, hasFind = false;
-    for (let i = 0; i < hList.length; i++) {
-      if (hList[i].offsetTop > scrollTop) {
-        current = i;
-        hasFind = true;
-        break;
-      }
-    }
-    if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-      current = hList.length - 1;
-    } else {
-      current--;
-    }
-    if (dir === 'down') {
-      if (current > lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex)
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    } else {
-      if (current < lastIndex) {
-        addActiveClass(current);
-        removeActiveClass(lastIndex);
-        lastIndex = current;
-        removeParentActiveClass();
-        lList[current] && addActiveLiElemment(lList[current].parentElement, tocContent);
-      }
-    }
-  });
-
-
-  window.addEventListener('load', function () {
-    showToc();
-    document.querySelector('#sidebar').style = 'display: block;';
-    tocWrapper.classList.add('toc-active');
-    setTimeout(function () {
-      if ("createEvent" in document) {
-        let evt = document.createEvent("HTMLEvents");
-        evt.initEvent("scroll", false, true);
-        document.dispatchEvent(evt);
-      }
-      else {
-        document.fireEvent("scroll");
-      }
-    }, 500)
-  })
-
-</script>
-            </div>
           
         
       </div>
@@ -552,8 +361,8 @@
           <div class="section bg-color post post-page">
             <section class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://mengyun233.github.io/post/bbone/">
-      2020.10.6
+    <a class="post-title-link" href="https://mengyun233.github.io/post/han-jia-ying-yu-lesson1-dan-ci/">
+      寒假英语lesson1单词
     </a>
   </h1>
   <div class="post-meta">
@@ -561,36 +370,23 @@
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span class="language" data-lan="publish">发布于</span>
-      <span class="publish-time" data-t="2020-10-06 09:33:42">2020-10-06</span>
+      <span class="publish-time" data-t="2021-02-17 14:13:59">2021-02-17</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
     <span class="meta-item">
-      <i class="fa fa-folder-o"></i>
-      <span class="pc-show language" data-lan="category-in">分类于</span>
-      
-      
-      <a href="https://mengyun233.github.io/tag/我还在bb/">
-        <span>随心乱说</span>
-      </a>
-      
-      
-    </span>
-    <span class="post-meta-divider">|</span>
-    
-    <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2<span class="language" data-lan="minute">分钟</span></span>
+      <span>0<span class="language" data-lan="minute">分钟</span></span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>334<span class="pc-show language" data-lan="words">字数</span></span>
+      <span>0<span class="pc-show language" data-lan="words">字数</span></span>
     </span>
     
     
     
-    <span id="/post/bbone/" data-flag-title="2020.10.6" class="meta-item pc-show leancloud_visitors">
+    <span id="/post/han-jia-ying-yu-lesson1-dan-ci/" data-flag-title="寒假英语lesson1单词" class="meta-item pc-show leancloud_visitors">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-eye"></i>
       <span><span class="language" data-lan="view">浏览量</span>：<span class="leancloud-visitors-count"></span></span>
@@ -599,14 +395,9 @@
   </div>
 </section>
             <div class="post-body next-md-body" id="post_body">
-              <p>qwq，随心乱写一番，把想说的话b在博客上。</p>
-<h2 id="塔罗">塔罗🔘</h2>
-<p>这东西出来已经一两周了，本来以为这个模式没混子的，即使有也不能咋样。看来我是想多了，昨天一局差点把我气得七窍生烟。你说侍卫混混就算了，基本功好还能赢；你骑士在这混就过分了吧？都快赢了，对面二挂救下打倒了，我还没上挂。结果红蝶开麦，对对面咒术说了几句什么乱七八糟的话（没听清），然后就看着咒术被摸满血，看着我被打倒，也不过来扶一下，我真的尽力了，你不去打对方，在这边演戏，不考虑别人感受这气不气人？好吧发发牢骚，反正小剧场她被骂的够惨，不过还狡辩。我也不想计较了，举报不谢🆗</p>
-<p><strong>这里也提醒一下大家（算了没人看）：玩游戏不是一个人的事情（单机玩家忽略qwq），要考虑队友感受，输了不怪你，但你演别人这就是你的错。</strong></p>
-<h2 id="论坛">论坛</h2>
-<p>谈点好事吧，论坛总算能发帖了，这还不错，兴奋的回了好多贴qwq。</p>
-<p>没啥话了，复习月考去了，祝还没有月考的各位考得顺利。</p>
-
+              <video controls autoplay name= "media">
+    <source src="file:///F:/%E6%A1%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%8E%A9%E6%84%8F%E5%84%BF/%E4%B8%80%E4%BA%9B%E9%9F%B3%E4%B9%90/%E5%AF%92%E5%81%87%E8%8B%B1%E8%AF%AD/lesson1%E5%8D%95%E8%AF%8D.mp3" type="audio/mpeg">
+    </video>
             </div>
             
               <div class="reward-btn">
@@ -622,7 +413,7 @@
     </li>
     <li class="post-copyright-link">
       <strong class="language" data-lan="link">本文链接：</strong>
-      <a href="https://mengyun233.github.io/post/bbone/" title="2020.10.6">https://mengyun233.github.io/post/bbone/</a>
+      <a href="https://mengyun233.github.io/post/han-jia-ying-yu-lesson1-dan-ci/" title="寒假英语lesson1单词">https://mengyun233.github.io/post/han-jia-ying-yu-lesson1-dan-ci/</a>
     </li>
     <li class="post-copyright-license">
       <strong class="language" data-lan="copyright">版权声明： </strong>
@@ -631,21 +422,15 @@
   </ul>
   <div class="tags">
     
-      <a href="https://mengyun233.github.io/tag/我还在bb/"># 随心乱说</a>
-    
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="《作业》（改编自朱自清《春》）" href="https://mengyun233.github.io/post/homework/">《作业》（改编自朱自清《春》）</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="《作业》（改编自朱自清《春》）" href="https://mengyun233.github.io/post/homework/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="诡异的游戏·先知传" href="https://mengyun233.github.io/post/梦开始的地方/">诡异的游戏·先知传</a>
-        <a class="nav-mobile-next" title="诡异的游戏·先知传" href="https://mengyun233.github.io/post/梦开始的地方/">下一篇</a>
+        <a class="nav-pc-next" title="伊莱生日快乐" href="https://mengyun233.github.io/post/yi-lai-sheng-ri-kuai-le/">伊莱生日快乐</a>
+        <a class="nav-mobile-next" title="伊莱生日快乐" href="https://mengyun233.github.io/post/yi-lai-sheng-ri-kuai-le/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>

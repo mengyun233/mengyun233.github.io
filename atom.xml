@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mengyun233.github.io</id>
     <title>梦 | 云</title>
-    <updated>2021-02-03T01:35:33.630Z</updated>
+    <updated>2021-02-18T02:48:23.933Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mengyun233.github.io"/>
     <link rel="self" href="https://mengyun233.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://mengyun233.github.io/images/avatar.png</logo>
     <icon>https://mengyun233.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 梦 | 云</rights>
+    <entry>
+        <title type="html"><![CDATA[寒假英语lesson1单词]]></title>
+        <id>https://mengyun233.github.io/post/han-jia-ying-yu-lesson1-dan-ci/</id>
+        <link href="https://mengyun233.github.io/post/han-jia-ying-yu-lesson1-dan-ci/">
+        </link>
+        <updated>2021-02-17T06:13:59.000Z</updated>
+        <content type="html"><![CDATA[<video controls autoplay name= "media">
+    <source src="file:///F:/%E6%A1%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E4%B8%80%E4%BA%9B%E7%8E%A9%E6%84%8F%E5%84%BF/%E4%B8%80%E4%BA%9B%E9%9F%B3%E4%B9%90/%E5%AF%92%E5%81%87%E8%8B%B1%E8%AF%AD/lesson1%E5%8D%95%E8%AF%8D.mp3" type="audio/mpeg">
+    </video>]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[伊莱生日快乐]]></title>
         <id>https://mengyun233.github.io/post/yi-lai-sheng-ri-kuai-le/</id>
